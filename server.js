@@ -4,6 +4,8 @@ const rowdy = require('rowdy-logger')
 const morgan = require('morgan')
 const cors = require('cors')
 require('dotenv').config()
+// required db models -- runs the index file
+require('./models')
 
 // config express app
 const app = express()
