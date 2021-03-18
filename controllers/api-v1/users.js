@@ -49,7 +49,6 @@ router.post('/register', async (req, res) => {
     console.log(error)
     res.status(500).json({ msg: '🔥 OH NO server error' })
   }
-
 })
 
 // POST /users/login -- validate crendentials
