@@ -20,10 +20,25 @@ app.use(cors())
 // for plain JSON request bodies
 app.use(express.json())
 
+// app.use((req, res, next) => {
+//   console.log('hello from a middleware 👋')
+//   next()
+// })
+
+const middlesware = (req, res, next) => {
+  console.log('hello from a middleware 👋')
+  next()
+}
+
+// app.use(middlesware)
+
 // GET / -- test index route
-app.get('/', (req, res) => {
+app.get('/', middlesware, (req, res) => {
   res.json({ msg: 'hello world 👾' })
 })
+
+// controllers
+app.use('/api-v1/users', require('./controllers/api-v1/users.js'))
 
 // tell express to listen on a port
 app.listen(PORT, () => {
