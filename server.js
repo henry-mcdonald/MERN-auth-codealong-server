@@ -25,6 +25,9 @@ app.get('/', (req, res) => {
   res.json({ msg: 'hello world 👾' })
 })
 
+// controllers
+app.use('/api-v1/users', require('./controllers/api-v1/users.js'))
+
 // tell express to listen on a port
 app.listen(PORT, () => {
   rowdyResults.print()
